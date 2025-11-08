@@ -1,10 +1,26 @@
 # PACUTE
 
-A comprehensive benchmark suite for evaluating language model capabilities on Tagalog linguistic tasks.
+A benchmark for evaluating language model capabilities on Filipino/Tagalog linguistic tasks.
 
 ## Overview
 
-PACUTE (name TBD) generates evaluation datasets testing core competencies in Filipino language understanding, focusing on morphology, composition, and manipulation tasks. The datasets include both multiple-choice and generative formats with parallel English and Tagalog prompts.
+PACUTE generates evaluation datasets testing Filipino language understanding across morphology, composition, and manipulation tasks. Datasets include both multiple-choice and generative formats with parallel English and Tagalog prompts.
+
+## Related Work
+
+**CUTE** (Edman et al., 2024) demonstrated that LLMs struggle with subword-level tasks despite being able to spell their tokens. Their benchmark tests English orthographic understanding through composition (spelling, character containment), similarity (orthographic vs semantic), and manipulation (insertion, deletion, substitution, swapping) tasks.
+
+**STOCHASTOK** (Sims et al., 2025) addressed these failures by introducing stochastic tokenization during pretraining. By randomly splitting tokens into sub-token pairs, STOCHASTOK exposes models to alternative segmentations of the same word, enabling them to learn fine-grained morphological structure. This approach dramatically improved performance on CUTE tasks and enabled grokking on multi-digit arithmetic.
+
+**PACUTE extends this line of work in three ways:**
+
+1. **Morphologically rich language**: Filipino exhibits extensive affixation (prefixes, infixes, suffixes, circumfixes) and complex stress patterns, providing a more challenging test of subword understanding than English.
+
+2. **Affixation tasks**: While CUTE focuses on character-level manipulation, PACUTE adds morphological inflection tasks that require understanding productive affixation rules, testing whether models can decompose and recombine morphemes.
+
+3. **Non-Latin orthography considerations**: Filipino uses diacritics for stress marking (mabilis: á, malumi: à, maragsa: â) and the "ng" digraph, introducing orthographic complexities absent in English.
+
+These additions test whether improvements from methods like STOCHASTOK transfer to languages with richer morphology and different orthographic systems.
 
 ## Task Categories
 
